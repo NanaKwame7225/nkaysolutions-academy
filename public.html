@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NkaySolutions Tech Academy — Prospectus 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1F3A;
+    --navy-mid: #14304F;
+    --navy-deep: #071528;
+    --gold: #B8893A;
+    --gold-light: #D4A862;
+    --cream: #FAF7F1;
+    --paper: #FFFFFF;
+    --text: #1B2433;
+    --muted: #6A7280;
+    --border: #E6E1D4;
+    --hairline: #D9D2C2;
+  }
+
+  html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; }
+    .no-print { display: none; }
+    .page-break { page-break-before: always; }
+    section { page-break-inside: avoid; }
+  }
+
+  /* ============= TOP BAR ============= */
+  .top-bar {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+  }
+  .top-bar .ref { color: var(--gold-light); }
+
+  /* ============= HERO ============= */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 90px 60px 100px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 70px;
+    align-items: center;
+    max-width: 1180px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .monogram {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .monogram-mark {
+    width: 46px; height: 46px;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    display: grid; place-items: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+  }
+  .monogram-text {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    font-weight: 500;
+  }
+  .monogram-text strong { color: white; font-weight: 600; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 28px; height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    line-height: 1.05;
+    margin-bottom: 22px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .hero-tagline {
+    font-size: 17px;
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 38px;
+    max-width: 520px;
+  }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 15px 28px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 14px 26px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: border-color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); }
+
+  .hero-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .stat-cell {
+    background: var(--navy);
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+  .stat-num.sm { font-size: 22px; }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .stat-rule {
+    width: 24px; height: 2px;
+    background: var(--gold);
+    margin-top: 4px;
+  }
+
+  /* Marquee strip under hero */
+  .hero-strip {
+    background: var(--gold);
+    color: var(--navy-deep);
+    text-align: center;
+    padding: 18px 60px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-strip span { margin: 0 22px; opacity: 0.7; }
+
+  /* ============= SECTION BASE ============= */
+  .section {
+    padding: 100px 60px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .section-head { margin-bottom: 56px; max-width: 720px; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    width: 28px; height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 18px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); font-weight: 500; }
+
+  .section-lead {
+    font-size: 16px;
+    color: var(--muted);
+    font-weight: 400;
+    max-width: 680px;
+    line-height: 1.8;
+  }
+
+  /* ============= ABOUT ============= */
+  .about-band {
+    background: var(--navy);
+    color: white;
+    padding: 100px 60px;
+    position: relative;
+  }
+  .about-band::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .about-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: start;
+  }
+
+  .about-band .section-title { color: white; }
+
+  .about-copy p {
+    color: rgba(255,255,255,0.75);
+    font-size: 15px;
+    line-height: 1.85;
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+  .about-copy p:first-of-type::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    float: left;
+    line-height: 0.9;
+    margin: 6px 12px 0 0;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .pillar {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+    align-items: start;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--gold);
+    font-weight: 600;
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .pillar-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+  .pillar-body {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ============= COURSES ============= */
+  .courses-bg {
+    background: var(--cream);
+    padding: 100px 60px;
+  }
+  .courses-inner { max-width: 1180px; margin: 0 auto; }
+
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+  }
+
+  .course-card {
+    background: var(--paper);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .course-card:hover { background: #FFFEFA; }
+
+  .course-no {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  .course-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .course-audience {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .course-desc {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    font-weight: 400;
+    flex: 1;
+  }
+  .course-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+  .course-duration {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .course-fee {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .course-fee small {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 2px;
+  }
+
+  /* ============= SCHEDULE & FEES ============= */
+  .schedule-band {
+    background: var(--paper);
+    padding: 100px 60px;
+  }
+  .schedule-inner { max-width: 1180px; margin: 0 auto; }
+
+  .shifts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    margin-bottom: 56px;
+  }
+
+  .shift {
+    background: var(--paper);
+    padding: 36px 28px;
+    text-align: left;
+    position: relative;
+  }
+  .shift.featured { background: var(--navy); color: white; }
+  .shift.featured .shift-title,
+  .shift.featured .shift-time { color: white; }
+  .shift.featured .shift-num { color: var(--gold-light); }
+
+  .shift-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .shift-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .shift-time {
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+  }
+  .shift-badge {
+    position: absolute;
+    top: 18px; right: 18px;
+    color: var(--gold-light);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border-top: 2px solid var(--navy);
+    border-bottom: 2px solid var(--navy);
+  }
+  .fee-table th {
+    color: var(--navy);
+    font-weight: 600;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--navy);
+  }
+  .fee-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: middle;
+  }
+  .fee-table tr:last-child td { border-bottom: none; }
+  .fee-table .fee-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .fee-hl {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .fee-table td.muted { color: var(--muted); font-size: 13px; }
+
+  .fee-note {
+    margin-top: 24px;
+    padding: 18px 22px;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .fee-note strong { color: var(--navy); }
+
+  /* ============= WHY US ============= */
+  .why-band {
+    background: var(--navy);
+    padding: 100px 60px;
+    position: relative;
+  }
+  .why-inner { max-width: 1180px; margin: 0 auto; }
+  .why-band .section-title { color: white; }
+  .why-band .section-lead { color: rgba(255,255,255,0.65); }
+
+  .reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .reason {
+    background: var(--navy);
+    padding: 36px 30px;
+  }
+  .reason-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  .reason-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 21px;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+  }
+  .reason-body {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ============= ENROLMENT ============= */
+  .enrol-band {
+    background: var(--paper);
+    padding: 100px 60px;
+  }
+  .enrol-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--navy);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .step-num::after {
+    content: '';
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--gold);
+    margin-top: 10px;
+  }
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .step-body {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .contact-card {
+    background: var(--navy);
+    color: white;
+    padding: 44px 38px;
+    position: relative;
+  }
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold);
+  }
+  .contact-card .card-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .contact-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+  .contact-card .card-lead {
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .contact-list { border-top: 1px solid rgba(255,255,255,0.1); }
+  .contact-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    align-items: baseline;
+  }
+  .contact-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 600;
+  }
+  .contact-value {
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 0.2px;
+  }
+
+  .enrol-btn {
+    display: block;
+    width: 100%;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 17px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 28px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .enrol-btn:hover { background: var(--gold-light); }
+
+  /* ============= FOOTER ============= */
+  .site-footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.5);
+    padding: 40px 60px 32px;
+    font-size: 12.5px;
+  }
+  .footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-brand {
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .footer-meta { letter-spacing: 0.5px; }
+
+  /* ============= PRINT BUTTON ============= */
+  .print-bar {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    z-index: 999;
+  }
+  .print-btn {
+    background: var(--navy);
+    color: white;
+    border: 1px solid var(--gold);
+    padding: 14px 24px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    transition: background 0.2s;
+  }
+  .print-btn:hover { background: var(--gold); color: var(--navy-deep); }
+
+  /* ============= RESPONSIVE ============= */
+  @media (max-width: 900px) {
+    .top-bar { padding: 10px 24px; flex-direction: column; gap: 6px; text-align: center; }
+    .hero { padding: 60px 24px 70px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero h1 { font-size: 44px; }
+    .hero-strip { padding: 16px 24px; font-size: 11px; }
+    .hero-strip span { margin: 0 10px; }
+    .section, .about-band, .courses-bg, .schedule-band, .why-band, .enrol-band { padding: 60px 24px; }
+    .about-inner, .enrol-inner { grid-template-columns: 1fr; gap: 50px; }
+    .courses-grid, .reasons, .shifts { grid-template-columns: 1fr; }
+    .section-title { font-size: 32px; }
+    .site-footer { padding: 30px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PRINT BUTTON -->
+<div class="print-bar no-print">
+  <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <span>NkaySolutions Tech Academy · Ablekuma Afuaman, Accra</span>
+  <span class="ref">Official Prospectus · Academic Year 2025</span>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="monogram">
+        <div class="monogram-mark">N</div>
+        <div class="monogram-text"><strong>NkaySolutions</strong> &nbsp;·&nbsp; Tech Academy</div>
+      </div>
+
+      <div class="hero-eyebrow">Prospectus 2025</div>
+      <h1>Practical Digital Skills, <em>Refined for the Real World.</em></h1>
+      <p class="hero-tagline">An independent technology academy delivering project-based training in computing, design, web development and data — taught by a working software professional, here in the heart of Ablekuma.</p>
+
+      <div class="hero-actions">
+        <a href="#enrol" class="btn-primary">Enrol Today &nbsp;→</a>
+        <a href="#courses" class="btn-ghost">View Courses</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="stat-cell">
+        <div class="stat-num">03</div>
+        <div class="stat-rule"></div>
+        <div class="stat-label">Specialist Courses</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num sm">Saturdays</div>
+        <div class="stat-rule"></div>
+        <div class="stat-label">Weekend Sessions Only<br>11:00 AM — 6:00 PM</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num sm">Project-Based</div>
+        <div class="stat-rule"></div>
+        <div class="stat-label">Hands-On Learning</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num sm">Ablekuma</div>
+        <div class="stat-rule"></div>
+        <div class="stat-label">Afuaman Community Centre</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hero-strip">
+  Enrolments Open <span>·</span> Visit or Call to Reserve a Seat <span>·</span> Limited Places Per Shift
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about-band">
+  <div class="about-inner">
+    <div>
+      <div class="section-label">Who We Are</div>
+      <h2 class="section-title">Technology education built for <em>this community.</em></h2>
+      <div class="about-copy" style="margin-top: 28px;">
+        <p>NkaySolutions Tech Academy was founded by a professional software developer and technology consultant with years of experience delivering digital solutions for schools, businesses, churches and NGOs across Ghana.</p>
+        <p>That same real-world expertise is brought directly into the classroom — so our students learn not just theory, but the precise skills employers and clients are paying for today.</p>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">I.</div>
+        <div>
+          <div class="pillar-title">Practical First</div>
+          <div class="pillar-body">Every lesson is hands-on. Students spend over 80% of class time at the keyboard producing real work — not transcribing notes.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">II.</div>
+        <div>
+          <div class="pillar-title">Community Pricing</div>
+          <div class="pillar-body">Tuition is calibrated for Ablekuma families, with flexible weekly and bi-weekly payment plans available on request.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">III.</div>
+        <div>
+          <div class="pillar-title">For Every Learner</div>
+          <div class="pillar-body">Whether you are 10 or 50, a student, jobseeker or business owner — there is a programme designed for you.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">IV.</div>
+        <div>
+          <div class="pillar-title">Weekend Convenient</div>
+          <div class="pillar-body">All classes run on Saturdays — perfect for students, working professionals and parents who cannot commit to weekday training.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COURSES ===== -->
+<section class="courses-bg" id="courses">
+  <div class="courses-inner">
+    <div class="section-head">
+      <div class="section-label">Programmes</div>
+      <h2 class="section-title">Our <em>Courses</em></h2>
+      <p class="section-lead">Each programme is project-based and engineered to give you a marketable skill — one you can either be employed for, or earn from independently, the moment you graduate.</p>
+    </div>
+
+    <div class="courses-grid">
+
+      <div class="course-card">
+        <div class="course-no">No. 01</div>
+        <div class="course-name">Basic Computer Literacy</div>
+        <div class="course-audience">Beginners &amp; Adults</div>
+        <p class="course-desc">Learn to use a computer from scratch — keyboard, mouse, file management, internet browsing and email. A welcoming starting point for first-time users of any age.</p>
+        <div class="course-foot">
+          <div class="course-duration">Sat · 11:00 AM — 1:00 PM</div>
+          <div class="course-fee">GHS 500<small>/course</small></div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-no">No. 02</div>
+        <div class="course-name">MS Office Suite</div>
+        <div class="course-audience">Students &amp; Professionals</div>
+        <p class="course-desc">Master Microsoft Word, Excel and PowerPoint. Produce professional documents, spreadsheets and presentations for the workplace and academia.</p>
+        <div class="course-foot">
+          <div class="course-duration">Sat · 1:30 PM — 3:30 PM</div>
+          <div class="course-fee">GHS 700<small>/course</small></div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-no">No. 03</div>
+        <div class="course-name">Data Analytics with Excel</div>
+        <div class="course-audience">Working Professionals</div>
+        <p class="course-desc">Analyse business data with Microsoft Excel. Produce charts, dashboards and reports that inform real decisions — a high-demand corporate skill.</p>
+        <div class="course-foot">
+          <div class="course-duration">Sat · 4:00 PM — 6:00 PM</div>
+          <div class="course-fee">GHS 1,500<small>/course</small></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCHEDULE & FEES ===== -->
+<section class="schedule-band" id="schedule">
+  <div class="schedule-inner">
+    <div class="section-head">
+      <div class="section-label">Timetable &amp; Tuition</div>
+      <h2 class="section-title">Saturday Schedule &amp; <em>Fee Schedule</em></h2>
+      <p class="section-lead">All programmes run on Saturdays only — three back-to-back sessions designed so working professionals, students and parents can train without disrupting the working week.</p>
+    </div>
+
+    <div class="shifts">
+      <div class="shift">
+        <div class="shift-num">I.</div>
+        <div class="shift-title">Basic Computer Literacy</div>
+        <div class="shift-time">Sat · 11:00 AM — 1:00 PM</div>
+      </div>
+      <div class="shift featured">
+        <div class="shift-badge">Most Requested</div>
+        <div class="shift-num">II.</div>
+        <div class="shift-title">MS Office Suite</div>
+        <div class="shift-time">Sat · 1:30 PM — 3:30 PM</div>
+      </div>
+      <div class="shift">
+        <div class="shift-num">III.</div>
+        <div class="shift-title">Data Analytics with Excel</div>
+        <div class="shift-time">Sat · 4:00 PM — 6:00 PM</div>
+      </div>
+    </div>
+
+    <table class="fee-table">
+      <thead>
+        <tr>
+          <th style="width:40%;">Programme</th>
+          <th style="width:25%;">Saturday Session</th>
+          <th style="width:15%;">Tuition</th>
+          <th style="width:20%;">Audience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="fee-name">Basic Computer Literacy</td><td class="muted">11:00 AM — 1:00 PM</td><td class="fee-hl">GHS 500</td><td class="muted">All Ages</td></tr>
+        <tr><td class="fee-name">MS Office Suite</td><td class="muted">1:30 PM — 3:30 PM</td><td class="fee-hl">GHS 700</td><td class="muted">Students / Professionals</td></tr>
+        <tr><td class="fee-name">Data Analytics with Excel</td><td class="muted">4:00 PM — 6:00 PM</td><td class="fee-hl">GHS 1,500</td><td class="muted">Professionals</td></tr>
+      </tbody>
+    </table>
+
+    <div class="fee-note">
+      <strong>Payment Terms.</strong> Weekly and bi-weekly instalment plans are available on request. A 50% registration deposit secures your seat at enrolment, with the balance payable across the duration of the course.
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section class="why-band">
+  <div class="why-inner">
+    <div class="section-head">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">What Sets Us <em>Apart.</em></h2>
+      <p class="section-lead">We are not another typing school. The points below summarise the standards that distinguish NkaySolutions Tech Academy.</p>
+    </div>
+
+    <div class="reasons">
+      <div class="reason">
+        <div class="reason-num">01</div>
+        <div class="reason-title">Real Developer Experience</div>
+        <div class="reason-body">Our founder has built websites, mobile applications and SaaS platforms for genuine Ghanaian clients. You learn from a practitioner, not solely an instructor.</div>
+      </div>
+      <div class="reason">
+        <div class="reason-num">02</div>
+        <div class="reason-title">Right Here in Ablekuma</div>
+        <div class="reason-body">No commute to Accra Central. World-class digital training in your own community, at a fraction of city-centre tuition rates.</div>
+      </div>
+      <div class="reason">
+        <div class="reason-num">03</div>
+        <div class="reason-title">Project-Based Learning</div>
+        <div class="reason-body">Every course concludes with a tangible portfolio piece — a designed flyer, a built website, a completed dashboard — not merely a certificate.</div>
+      </div>
+      <div class="reason">
+        <div class="reason-num">04</div>
+        <div class="reason-title">Flexible for Everyone</div>
+        <div class="reason-body">Saturday-only sessions across three back-to-back time slots. Working adults, full-time students and business owners can all train without disrupting the working week.</div>
+      </div>
+      <div class="reason">
+        <div class="reason-num">05</div>
+        <div class="reason-title">Income-Generating Skills</div>
+        <div class="reason-body">Our offerings in design, web development and digital marketing are selected so graduates can begin earning within weeks of completion.</div>
+      </div>
+      <div class="reason">
+        <div class="reason-num">06</div>
+        <div class="reason-title">Affordable Payment Plans</div>
+        <div class="reason-body">Weekly and bi-weekly options ensure that cost is never a barrier to obtaining the skills that can transform a career.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENROLMENT ===== -->
+<section class="enrol-band" id="enrol">
+  <div class="enrol-inner">
+    <div>
+      <div class="section-label">How to Join</div>
+      <h2 class="section-title">Enrol in <em>Four Steps.</em></h2>
+      <p class="section-lead" style="margin-bottom: 40px;">A short, transparent process — designed so you can secure your seat and begin learning without delay.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div>
+            <div class="step-title">Choose Your Course</div>
+            <div class="step-body">Review our programmes and select the one matching your goals and schedule. Unsure? Our admissions team will help you decide.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div>
+            <div class="step-title">Visit or Call Us</div>
+            <div class="step-body">Attend our Ablekuma Afuaman centre in person, or telephone ahead to confirm available seats in your preferred shift.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div>
+            <div class="step-title">Complete Registration</div>
+            <div class="step-body">Submit a brief enrolment form and the 50% registration deposit. Instalment plans are available on request.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div>
+            <div class="step-title">Begin Your Programme</div>
+            <div class="step-body">Arrive on your first class day with stationery in hand. Your student ID and printed timetable are issued on arrival.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="card-eyebrow">Admissions Office</div>
+      <h3>Speak with Our Team</h3>
+      <p class="card-lead">We would be delighted to welcome you, or your child, to the academy. Reach us through any of the channels listed below.</p>
+
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Ablekuma Afuaman, Accra, Ghana</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Telephone</div>
+          <div class="contact-value">0538350574</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">WhatsApp</div>
+          <div class="contact-value">0538350574</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">nkaysolutions@gmail.com</div>
+        </div>
+      </div>
+
+      <a href="#" class="enrol-btn">Register Now &nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">NkaySolutions Tech Academy</div>
+    <div class="footer-meta">A NkaySolutions Initiative · Ablekuma Afuaman, Accra · © 2025 All Rights Reserved</div>
+  </div>
+</footer>
+
+</body>
+</html>
