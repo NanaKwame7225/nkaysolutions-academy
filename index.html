@@ -1480,14 +1480,18 @@ function submitReg() {
   document.getElementById('reg-btn-text').textContent = 'Submitting...';
   btn.disabled = true;
 
+  // Use no-cors mode to avoid CORS blocking from GitHub Pages
+  // We show success immediately since no-cors returns opaque response
+  showSuccess(fname, mod.name, refCode);
+
+  // Send data in background using no-cors (fires and forgets)
   fetch(REG_GAS_URL, {
     method: 'POST',
+    mode: 'no-cors',
     headers: { 'Content-Type': 'text/plain' },
     body: JSON.stringify(data)
-  }).then(function(r) { return r.json(); })
-  .catch(function() { return { success: true }; })
-  .finally(function() {
-    showSuccess(fname, mod.name, refCode);
+  }).catch(function(err) {
+    console.log('Fetch error:', err);
   });
 }
 
