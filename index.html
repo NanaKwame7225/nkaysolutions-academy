@@ -940,6 +940,167 @@
     .reg-two-col { grid-template-columns: 1fr; }
     .reg-module-tabs { flex-direction: column; }
   }
+
+  /* ============= BUNDLE PACKAGES ============= */
+  .bundle-band {
+    background: var(--cream);
+    padding: 100px 60px;
+    border-top: 1px solid var(--hairline);
+  }
+  .bundle-inner { max-width: 1180px; margin: 0 auto; }
+
+  .bundle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    margin-top: 0;
+  }
+
+  .bundle-card {
+    background: var(--paper);
+    padding: 38px 36px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .bundle-card.featured {
+    background: var(--navy);
+  }
+
+  .bundle-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+  .bundle-card.featured .bundle-tag {
+    background: rgba(196,154,42,0.2);
+    color: var(--gold-light);
+  }
+
+  .bundle-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+  }
+  .bundle-card.featured .bundle-name { color: white; }
+
+  .bundle-includes {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+  .bundle-card.featured .bundle-includes { color: rgba(255,255,255,0.55); }
+
+  .bundle-courses {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    flex: 1;
+  }
+  .bundle-card.featured .bundle-courses {
+    border-bottom-color: rgba(255,255,255,0.1);
+  }
+
+  .bundle-course-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .bundle-card.featured .bundle-course-item { color: white; }
+  .bundle-course-item::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .bundle-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .bundle-price-new {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .bundle-card.featured .bundle-price-new { color: var(--gold-light); }
+
+  .bundle-price-old {
+    font-size: 16px;
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+  .bundle-card.featured .bundle-price-old { color: rgba(255,255,255,0.35); }
+
+  .bundle-saving {
+    font-size: 12px;
+    color: #166534;
+    font-weight: 600;
+    background: #dcfce7;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .bundle-card.featured .bundle-saving {
+    background: rgba(220,252,231,0.15);
+    color: #86efac;
+  }
+
+  .bundle-cta {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    text-align: center;
+  }
+  .bundle-card.featured .bundle-cta {
+    background: var(--gold);
+    color: var(--navy-deep);
+  }
+  .bundle-cta:hover { opacity: 0.9; }
+
+  @media(max-width: 900px) {
+    .bundle-band { padding: 60px 24px; }
+    .bundle-grid { grid-template-columns: 1fr; }
+  }
+
 </style>
 </head>
 <body>
@@ -1142,6 +1303,56 @@
 
     <div class="fee-note">
       <strong>Payment Terms.</strong> Weekly and bi-weekly instalment plans are available on request. A 50% registration deposit secures your seat at enrolment, with the balance payable across the duration of the course.
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== BUNDLE PACKAGES ===== -->
+<section class="bundle-band" id="bundles">
+  <div class="bundle-inner">
+    <div class="section-head">
+      <div class="section-label">Bundle Packages</div>
+      <h2 class="section-title">Save More, <em>Learn More.</em></h2>
+      <p class="section-lead">Combine two programmes at a special bundle price and get more skills for less. Perfect for students who want to build a complete digital toolkit.</p>
+    </div>
+
+    <div class="bundle-grid">
+
+      <!-- STARTER BUNDLE -->
+      <div class="bundle-card">
+        <div class="bundle-tag">Starter Bundle</div>
+        <div class="bundle-name">Basic IT Skills + Microsoft Office</div>
+        <div class="bundle-includes">The perfect combination for beginners — start from scratch and progress straight into professional office productivity tools.</div>
+        <div class="bundle-courses">
+          <div class="bundle-course-item">Basic Computer Literacy &mdash; 6 Weeks</div>
+          <div class="bundle-course-item">MS Office Suite &mdash; 6 Weeks</div>
+        </div>
+        <div class="bundle-pricing">
+          <div class="bundle-price-new">GHS 1,100</div>
+          <div class="bundle-price-old">GHS 1,200</div>
+        </div>
+        <div class="bundle-saving">You save GHS 100 &nbsp;(8% off)</div>
+        <button class="bundle-cta" onclick="openRegBundle('Starter Bundle - Basic Computer Literacy + MS Office Suite')">Enrol in Bundle &nbsp;&#8594;</button>
+      </div>
+
+      <!-- PROFESSIONAL BUNDLE -->
+      <div class="bundle-card featured">
+        <div class="bundle-tag">&#11088; Professional Bundle</div>
+        <div class="bundle-name">Microsoft Office + Data Analytics</div>
+        <div class="bundle-includes">The career-ready combination — master the full Microsoft Office Suite then level up into data analytics, one of the most in-demand skills in Ghana today.</div>
+        <div class="bundle-courses">
+          <div class="bundle-course-item">MS Office Suite &mdash; 6 Weeks</div>
+          <div class="bundle-course-item">Data Analytics with Excel &mdash; 6 Weeks</div>
+        </div>
+        <div class="bundle-pricing">
+          <div class="bundle-price-new">GHS 2,000</div>
+          <div class="bundle-price-old">GHS 2,200</div>
+        </div>
+        <div class="bundle-saving">You save GHS 200 &nbsp;(9% off)</div>
+        <button class="bundle-cta" onclick="openRegBundle('Professional Bundle - MS Office Suite + Data Analytics with Excel')">Enrol in Bundle &nbsp;&#8594;</button>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1417,7 +1628,20 @@ function closeReg() {
   document.body.style.overflow = '';
 }
 
+function openRegBundle(bundleName) {
+  document.getElementById('reg-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Pre-select first tab and show bundle name in badge
+  selectModule(0);
+  document.getElementById('rmb-name').textContent = bundleName;
+  document.getElementById('rmb-meta').innerHTML = 'Bundle Package &nbsp;&middot;&nbsp; Special Price';
+  document.getElementById('rmb-no').textContent = '&#127873;';
+  // Store bundle name for submission
+  window._bundleSelected = bundleName;
+}
+
 function selectModule(idx) {
+  window._bundleSelected = null;
   selectedModule = idx;
   var mod = MODULES[idx];
 
@@ -1453,6 +1677,7 @@ function submitReg() {
   err.style.display = 'none';
 
   var mod = MODULES[selectedModule];
+  var moduleName = window._bundleSelected || mod.name;
   var refCode = generateRefCode();
   var now = new Date();
   var dateStr = now.toLocaleDateString('en-GB') + ' ' + now.toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit'});
@@ -1461,7 +1686,7 @@ function submitReg() {
     action: 'register',
     ref: refCode,
     date: dateStr,
-    module: mod.name,
+    module: moduleName,
     firstName: fname,
     lastName: lname,
     fullName: fname + ' ' + lname,
