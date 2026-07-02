@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NkaySolutions Tech Academy — Prospectus 2026</title>
+<title>NkaySolutions Tech Academy — Prospectus 2025</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -167,9 +167,6 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: background 0.2s;
-    border: none;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
   }
   .btn-primary:hover { background: var(--gold-light); }
 
@@ -567,7 +564,7 @@
 
   .reasons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1px;
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.1);
@@ -726,10 +723,6 @@
     letter-spacing: 2.5px;
     text-transform: uppercase;
     transition: background 0.2s;
-    border: none;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    width: 100%;
   }
   .enrol-btn:hover { background: var(--gold-light); }
 
@@ -794,313 +787,6 @@
     .section-title { font-size: 32px; }
     .site-footer { padding: 30px 24px; }
   }
-
-  /* ============= REGISTRATION MODAL ============= */
-  .reg-overlay {
-    position: fixed; inset: 0;
-    background: rgba(7,21,40,0.78);
-    backdrop-filter: blur(6px);
-    display: flex; align-items: center; justify-content: center;
-    z-index: 9999; padding: 20px;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.25s ease;
-  }
-  .reg-overlay.open { opacity: 1; pointer-events: all; }
-
-  .reg-modal {
-    background: var(--paper); 
-    width: 100%; max-width: 600px;
-    max-height: 90vh; overflow-y: auto;
-    box-shadow: 0 30px 90px rgba(0,0,0,0.35);
-    transform: translateY(16px);
-    transition: transform 0.25s ease;
-    border-top: 3px solid var(--gold);
-  }
-  .reg-overlay.open .reg-modal { transform: translateY(0); }
-
-  .reg-header {
-    background: var(--navy);
-    padding: 32px 38px 26px;
-    position: relative;
-  }
-  .reg-header-label {
-    font-size: 10px; font-weight: 600; letter-spacing: 3px;
-    text-transform: uppercase; color: var(--gold-light);
-    margin-bottom: 10px;
-  }
-  .reg-header h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px; color: white; font-weight: 600;
-    margin-bottom: 6px; letter-spacing: -0.3px;
-  }
-  .reg-header p { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 300; }
-  .reg-close {
-    position: absolute; top: 22px; right: 22px;
-    background: transparent; border: 1px solid rgba(255,255,255,0.25);
-    color: white; width: 32px; height: 32px;
-    border-radius: 0; font-size: 14px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: border-color 0.15s;
-    font-family: 'Inter', sans-serif;
-  }
-  .reg-close:hover { border-color: var(--gold); }
-
-  .reg-body { padding: 32px 38px; }
-
-  .reg-module-tabs {
-    display: flex; gap: 1px; margin-bottom: 26px;
-    background: var(--hairline); border: 1px solid var(--hairline);
-  }
-  .reg-tab {
-    flex: 1; padding: 12px 8px; 
-    border: none; background: var(--paper);
-    font-size: 11px; font-weight: 600; cursor: pointer;
-    font-family: 'Inter', sans-serif; color: var(--muted);
-    transition: all 0.15s; line-height: 1.4; text-align: center;
-    letter-spacing: 0.5px; text-transform: uppercase;
-  }
-  .reg-tab.active { background: var(--navy); color: white; }
-
-  .reg-field { margin-bottom: 18px; }
-  .reg-field label {
-    display: block; font-size: 11px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 1px;
-    color: var(--muted); margin-bottom: 8px;
-  }
-  .reg-field input, .reg-field select, .reg-field textarea {
-    width: 100%; border: none; border-bottom: 1.5px solid var(--border);
-    padding: 10px 2px;
-    font-size: 14px; font-family: 'Inter', sans-serif;
-    color: var(--text); outline: none;
-    transition: border-color 0.15s; background: transparent;
-    -webkit-appearance: none;
-  }
-  .reg-field input:focus, .reg-field select:focus, .reg-field textarea:focus {
-    border-color: var(--navy);
-  }
-  .reg-field textarea { height: 70px; resize: vertical; line-height: 1.5; }
-  .reg-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-
-  .reg-module-badge {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--cream);
-    padding: 14px 16px; margin-bottom: 24px;
-    border-left: 3px solid var(--gold);
-  }
-  .reg-module-badge .rmb-no { 
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px; color: var(--gold); font-weight: 600;
-  }
-  .reg-module-badge .rmb-name { font-weight: 600; font-size: 14px; color: var(--navy); font-family: 'Cormorant Garamond', serif; font-size: 17px; }
-  .reg-module-badge .rmb-meta { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
-
-  .reg-submit {
-    width: 100%; background: var(--gold); color: var(--navy-deep);
-    border: none; padding: 16px;
-    font-size: 13px; font-weight: 600; cursor: pointer;
-    font-family: 'Inter', sans-serif; margin-top: 10px;
-    transition: background 0.15s; display: flex;
-    align-items: center; justify-content: center; gap: 10px;
-    letter-spacing: 2px; text-transform: uppercase;
-  }
-  .reg-submit:hover { background: var(--gold-light); }
-  .reg-submit:disabled { background: var(--muted); cursor: not-allowed; }
-
-  .reg-success {
-    text-align: center; padding: 44px 20px;
-  }
-  .reg-success .tick {
-    width: 64px; height: 64px; background: var(--cream);
-    border: 1.5px solid var(--gold);
-    margin: 0 auto 20px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 26px; color: var(--gold);
-    font-family: 'Cormorant Garamond', serif;
-  }
-  .reg-success h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px; color: var(--navy); margin-bottom: 10px; font-weight: 600;
-  }
-  .reg-success p { font-size: 14px; color: var(--muted); line-height: 1.7; }
-  .reg-success .reg-code {
-    display: inline-block; background: var(--navy);
-    color: var(--gold-light); font-size: 19px; font-weight: 600;
-    padding: 12px 28px; margin: 20px 0;
-    letter-spacing: 3px; font-family: 'Cormorant Garamond', serif;
-  }
-
-  .reg-note {
-    font-size: 11.5px; color: var(--muted);
-    text-align: center; margin-top: 16px; line-height: 1.7;
-  }
-
-  @media(max-width: 600px) {
-    .reg-body { padding: 24px 22px; }
-    .reg-header { padding: 26px 22px 22px; }
-    .reg-two-col { grid-template-columns: 1fr; }
-    .reg-module-tabs { flex-direction: column; }
-  }
-
-  /* ============= BUNDLE PACKAGES ============= */
-  .bundle-band {
-    background: var(--cream);
-    padding: 100px 60px;
-    border-top: 1px solid var(--hairline);
-  }
-  .bundle-inner { max-width: 1180px; margin: 0 auto; }
-
-  .bundle-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--hairline);
-    border: 1px solid var(--hairline);
-    margin-top: 0;
-  }
-
-  .bundle-card {
-    background: var(--paper);
-    padding: 38px 36px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  .bundle-card.featured {
-    background: var(--navy);
-  }
-
-  .bundle-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--gold);
-    color: var(--navy-deep);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    margin-bottom: 20px;
-    width: fit-content;
-  }
-  .bundle-card.featured .bundle-tag {
-    background: rgba(196,154,42,0.2);
-    color: var(--gold-light);
-  }
-
-  .bundle-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 6px;
-    letter-spacing: -0.3px;
-    line-height: 1.2;
-  }
-  .bundle-card.featured .bundle-name { color: white; }
-
-  .bundle-includes {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 28px;
-    line-height: 1.7;
-  }
-  .bundle-card.featured .bundle-includes { color: rgba(255,255,255,0.55); }
-
-  .bundle-courses {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 28px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--border);
-    flex: 1;
-  }
-  .bundle-card.featured .bundle-courses {
-    border-bottom-color: rgba(255,255,255,0.1);
-  }
-
-  .bundle-course-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    color: var(--text);
-    font-weight: 500;
-  }
-  .bundle-card.featured .bundle-course-item { color: white; }
-  .bundle-course-item::before {
-    content: '';
-    width: 6px; height: 6px;
-    background: var(--gold);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .bundle-pricing {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-  }
-  .bundle-price-new {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 600;
-    color: var(--navy);
-    line-height: 1;
-  }
-  .bundle-card.featured .bundle-price-new { color: var(--gold-light); }
-
-  .bundle-price-old {
-    font-size: 16px;
-    color: var(--muted);
-    text-decoration: line-through;
-  }
-  .bundle-card.featured .bundle-price-old { color: rgba(255,255,255,0.35); }
-
-  .bundle-saving {
-    font-size: 12px;
-    color: #166534;
-    font-weight: 600;
-    background: #dcfce7;
-    padding: 4px 10px;
-    border-radius: 20px;
-  }
-  .bundle-card.featured .bundle-saving {
-    background: rgba(220,252,231,0.15);
-    color: #86efac;
-  }
-
-  .bundle-cta {
-    margin-top: 20px;
-    display: block;
-    width: 100%;
-    background: var(--navy);
-    color: white;
-    border: none;
-    padding: 14px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: background 0.2s;
-    text-align: center;
-  }
-  .bundle-card.featured .bundle-cta {
-    background: var(--gold);
-    color: var(--navy-deep);
-  }
-  .bundle-cta:hover { opacity: 0.9; }
-
-  @media(max-width: 900px) {
-    .bundle-band { padding: 60px 24px; }
-    .bundle-grid { grid-template-columns: 1fr; }
-  }
-
 </style>
 </head>
 <body>
@@ -1113,7 +799,7 @@
 <!-- ===== TOP BAR ===== -->
 <div class="top-bar">
   <span>NkaySolutions Tech Academy · Ablekuma Afuaman, Accra</span>
-  <span class="ref">Official Prospectus · Academic Year 2026</span>
+  <span class="ref">Official Prospectus · Academic Year 2025</span>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -1125,12 +811,12 @@
         <div class="monogram-text"><strong>NkaySolutions</strong> &nbsp;·&nbsp; Tech Academy</div>
       </div>
 
-      <div class="hero-eyebrow">Prospectus 2026</div>
+      <div class="hero-eyebrow">Prospectus 2025</div>
       <h1>Practical Digital Skills, <em>Refined for the Real World.</em></h1>
-      <p class="hero-tagline">An independent technology academy delivering project-based training in computing, design, web development and data — taught by a working software professional, here in the heart of Ablekuma.</p>
+      <p class="hero-tagline">An independent technology academy delivering project-based training in computing, Microsoft Office, data analytics and Artificial Intelligence — taught by a working software professional, here in the heart of Ablekuma.</p>
 
       <div class="hero-actions">
-        <button onclick="openReg()" class="btn-primary">Enrol Today &nbsp;→</button>
+        <a href="#enrol" class="btn-primary">Enrol Today &nbsp;→</a>
         <a href="#courses" class="btn-ghost">View Courses</a>
       </div>
     </div>
@@ -1172,7 +858,7 @@
       <h2 class="section-title">Technology education built for <em>this community.</em></h2>
       <div class="about-copy" style="margin-top: 28px;">
         <p>NkaySolutions Tech Academy was founded by a professional software developer and technology consultant with years of experience delivering digital solutions for schools, businesses, churches and NGOs across Ghana.</p>
-        <p>That same real-world expertise is brought directly into the classroom — so our students learn not just theory, but the precise skills employers and clients are paying for today.</p>
+        <p>That same real-world expertise is brought directly into the classroom — so our students learn not just theory, but the precise skills employers and clients are paying for today. And because AI is now part of every workplace, every student learns to use it confidently as a tool — not a mystery.</p>
       </div>
     </div>
 
@@ -1307,56 +993,6 @@
   </div>
 </section>
 
-
-<!-- ===== BUNDLE PACKAGES ===== -->
-<section class="bundle-band" id="bundles">
-  <div class="bundle-inner">
-    <div class="section-head">
-      <div class="section-label">Bundle Packages</div>
-      <h2 class="section-title">Save More, <em>Learn More.</em></h2>
-      <p class="section-lead">Combine two programmes at a special bundle price and get more skills for less. Perfect for students who want to build a complete digital toolkit.</p>
-    </div>
-
-    <div class="bundle-grid">
-
-      <!-- STARTER BUNDLE -->
-      <div class="bundle-card">
-        <div class="bundle-tag">Starter Bundle</div>
-        <div class="bundle-name">Basic IT Skills + Microsoft Office</div>
-        <div class="bundle-includes">The perfect combination for beginners — start from scratch and progress straight into professional office productivity tools.</div>
-        <div class="bundle-courses">
-          <div class="bundle-course-item">Basic Computer Literacy &mdash; 6 Weeks</div>
-          <div class="bundle-course-item">MS Office Suite &mdash; 6 Weeks</div>
-        </div>
-        <div class="bundle-pricing">
-          <div class="bundle-price-new">GHS 1,100</div>
-          <div class="bundle-price-old">GHS 1,200</div>
-        </div>
-        <div class="bundle-saving">You save GHS 100 &nbsp;(8% off)</div>
-        <button class="bundle-cta" onclick="openRegBundle('Starter Bundle - Basic Computer Literacy + MS Office Suite')">Enrol in Bundle &nbsp;&#8594;</button>
-      </div>
-
-      <!-- PROFESSIONAL BUNDLE -->
-      <div class="bundle-card featured">
-        <div class="bundle-tag">&#11088; Professional Bundle</div>
-        <div class="bundle-name">Microsoft Office + Data Analytics</div>
-        <div class="bundle-includes">The career-ready combination — master the full Microsoft Office Suite then level up into data analytics, one of the most in-demand skills in Ghana today.</div>
-        <div class="bundle-courses">
-          <div class="bundle-course-item">MS Office Suite &mdash; 6 Weeks</div>
-          <div class="bundle-course-item">Data Analytics with Excel &mdash; 6 Weeks</div>
-        </div>
-        <div class="bundle-pricing">
-          <div class="bundle-price-new">GHS 2,000</div>
-          <div class="bundle-price-old">GHS 2,200</div>
-        </div>
-        <div class="bundle-saving">You save GHS 200 &nbsp;(9% off)</div>
-        <button class="bundle-cta" onclick="openRegBundle('Professional Bundle - MS Office Suite + Data Analytics with Excel')">Enrol in Bundle &nbsp;&#8594;</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ===== WHY US ===== -->
 <section class="why-band">
   <div class="why-inner">
@@ -1396,6 +1032,11 @@
         <div class="reason-num">06</div>
         <div class="reason-title">Affordable Payment Plans</div>
         <div class="reason-body">Weekly and bi-weekly options ensure that cost is never a barrier to obtaining the skills that can transform a career.</div>
+      </div>
+      <div class="reason">
+        <div class="reason-num">07</div>
+        <div class="reason-title">AI-Powered Learning &mdash; Built In</div>
+        <div class="reason-body">The future belongs to those who work <em>with</em> AI, not against it. Every student at NkaySolutions Tech Academy is trained to harness Artificial Intelligence as a daily productivity tool &mdash; writing smarter, analysing faster and working more efficiently in any role or business.</div>
       </div>
     </div>
   </div>
@@ -1453,11 +1094,11 @@
         </div>
         <div class="contact-item">
           <div class="contact-label">Telephone</div>
-          <div class="contact-value">0557366229</div>
+          <div class="contact-value">0538350574</div>
         </div>
         <div class="contact-item">
           <div class="contact-label">WhatsApp</div>
-          <div class="contact-value">0557366229</div>
+          <div class="contact-value">0538350574</div>
         </div>
         <div class="contact-item">
           <div class="contact-label">Email</div>
@@ -1465,7 +1106,7 @@
         </div>
       </div>
 
-      <button onclick="openReg()" class="enrol-btn">Register Now &nbsp;→</button>
+      <a href="#" class="enrol-btn">Register Now &nbsp;→</a>
     </div>
   </div>
 </section>
@@ -1474,269 +1115,9 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">NkaySolutions Tech Academy</div>
-    <div class="footer-meta">A NkaySolutions Initiative · Ablekuma Afuaman, Accra · © 2026 All Rights Reserved</div>
+    <div class="footer-meta">A NkaySolutions Initiative · Ablekuma Afuaman, Accra · © 2025 All Rights Reserved</div>
   </div>
 </footer>
-
-<!-- ===== REGISTRATION MODAL ===== -->
-<div class="reg-overlay" id="reg-overlay" onclick="if(event.target===this)closeReg()">
-  <div class="reg-modal" id="reg-modal">
-
-    <div class="reg-header">
-      <button class="reg-close" onclick="closeReg()">&#10005;</button>
-      <div class="reg-header-label">Student Registration</div>
-      <h3>Enrol at NkaySolutions Tech Academy</h3>
-      <p>Select your programme and complete the form below. Our admissions team will contact you within 24 hours.</p>
-    </div>
-
-    <div class="reg-body" id="reg-body">
-
-      <!-- MODULE TABS -->
-      <div class="reg-module-tabs">
-        <button class="reg-tab active" onclick="selectModule(0)">Basic Computing</button>
-        <button class="reg-tab" onclick="selectModule(1)">MS Office</button>
-        <button class="reg-tab" onclick="selectModule(2)">Data Analytics</button>
-      </div>
-
-      <!-- SELECTED MODULE BADGE -->
-      <div class="reg-module-badge">
-        <div class="rmb-no" id="rmb-no">01</div>
-        <div>
-          <div class="rmb-name" id="rmb-name">Basic Computer Literacy</div>
-          <div class="rmb-meta" id="rmb-meta">Saturdays 11:00 AM – 1:00 PM &nbsp;·&nbsp; GHS 500</div>
-        </div>
-      </div>
-
-      <!-- FORM -->
-      <div class="reg-two-col">
-        <div class="reg-field">
-          <label>First Name *</label>
-          <input type="text" id="rf-fname" placeholder="e.g. Kwame">
-        </div>
-        <div class="reg-field">
-          <label>Last Name *</label>
-          <input type="text" id="rf-lname" placeholder="e.g. Mensah">
-        </div>
-      </div>
-      <div class="reg-two-col">
-        <div class="reg-field">
-          <label>Phone / WhatsApp *</label>
-          <input type="tel" id="rf-phone" placeholder="e.g. 0244123456">
-        </div>
-        <div class="reg-field">
-          <label>Email Address</label>
-          <input type="email" id="rf-email" placeholder="optional">
-        </div>
-      </div>
-      <div class="reg-two-col">
-        <div class="reg-field">
-          <label>Age Range *</label>
-          <select id="rf-age">
-            <option value="">Select...</option>
-            <option>Under 16</option>
-            <option>16 – 20</option>
-            <option>21 – 30</option>
-            <option>31 – 45</option>
-            <option>Above 45</option>
-          </select>
-        </div>
-        <div class="reg-field">
-          <label>Occupation</label>
-          <select id="rf-occupation">
-            <option value="">Select...</option>
-            <option>Student (JHS/SHS)</option>
-            <option>University Student</option>
-            <option>Employed</option>
-            <option>Self-Employed / Business</option>
-            <option>Job Seeker</option>
-            <option>Other</option>
-          </select>
-        </div>
-      </div>
-      <div class="reg-field">
-        <label>How did you hear about us?</label>
-        <select id="rf-source">
-          <option value="">Select...</option>
-          <option>Friend / Family</option>
-          <option>WhatsApp</option>
-          <option>Facebook / Instagram</option>
-          <option>Flyer / Poster</option>
-          <option>Church / Community</option>
-          <option>School</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="reg-field">
-        <label>Any questions or comments?</label>
-        <textarea id="rf-comment" placeholder="Optional — let us know anything you'd like us to know before we contact you."></textarea>
-      </div>
-
-      <div id="reg-err" style="background:#fee2e2;color:#991b1b;padding:12px 16px;font-size:13px;margin-bottom:14px;display:none;border-left:3px solid #dc2626"></div>
-
-      <button class="reg-submit" id="reg-submit-btn" onclick="submitReg()">
-        <span id="reg-btn-text">Submit Registration &nbsp;&#8594;</span>
-      </button>
-
-      <div class="reg-note">
-        Your information is used only for enrolment purposes and will never be shared with third parties.<br>
-        We will contact you via WhatsApp or phone within 24 hours to confirm your place.
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<script>
-// ── MODULE DATA ──
-var MODULES = [
-  {
-    no: '01',
-    name: 'Basic Computer Literacy',
-    meta: 'Saturdays 11:00 AM – 1:00 PM &nbsp;·&nbsp; GHS 500',
-    fee: 'GHS 500',
-    duration: '6 Weeks'
-  },
-  {
-    no: '02',
-    name: 'MS Office Suite',
-    meta: 'Saturdays 1:30 PM – 3:30 PM &nbsp;·&nbsp; GHS 700',
-    fee: 'GHS 700',
-    duration: '6 Weeks'
-  },
-  {
-    no: '03',
-    name: 'Data Analytics with Excel',
-    meta: 'Saturdays 4:00 PM – 6:00 PM &nbsp;·&nbsp; GHS 1,500',
-    fee: 'GHS 1,500',
-    duration: '6 Weeks'
-  }
-];
-
-var selectedModule = 0;
-
-// Google Apps Script URL for registration database (same as exam platform sync)
-var REG_GAS_URL = 'https://script.google.com/macros/s/AKfycbxhub2DHGXwLCB01sa2t4MNP4KzbCR9MlO2J7qUMI3pytezIxWqt-yWkca3xSinvHFJyw/exec';
-
-function openReg() {
-  document.getElementById('reg-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  selectModule(0);
-}
-
-function closeReg() {
-  document.getElementById('reg-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function openRegBundle(bundleName) {
-  document.getElementById('reg-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  // Pre-select first tab and show bundle name in badge
-  selectModule(0);
-  document.getElementById('rmb-name').textContent = bundleName;
-  document.getElementById('rmb-meta').innerHTML = 'Bundle Package &nbsp;&middot;&nbsp; Special Price';
-  document.getElementById('rmb-no').textContent = '&#127873;';
-  // Store bundle name for submission
-  window._bundleSelected = bundleName;
-}
-
-function selectModule(idx) {
-  window._bundleSelected = null;
-  selectedModule = idx;
-  var mod = MODULES[idx];
-
-  document.querySelectorAll('.reg-tab').forEach(function(t, i) {
-    t.className = 'reg-tab' + (i === idx ? ' active' : '');
-  });
-
-  document.getElementById('rmb-no').textContent = mod.no;
-  document.getElementById('rmb-name').textContent = mod.name;
-  document.getElementById('rmb-meta').innerHTML = mod.meta;
-}
-
-function generateRefCode() {
-  var yr = new Date().getFullYear();
-  var num = Math.floor(Math.random() * 9000) + 1000;
-  return 'NTA-' + yr + '-' + num;
-}
-
-function submitReg() {
-  var fname = document.getElementById('rf-fname').value.trim();
-  var lname = document.getElementById('rf-lname').value.trim();
-  var phone = document.getElementById('rf-phone').value.trim();
-  var email = document.getElementById('rf-email').value.trim();
-  var age = document.getElementById('rf-age').value;
-  var occ = document.getElementById('rf-occupation').value;
-  var source = document.getElementById('rf-source').value;
-  var comment = document.getElementById('rf-comment').value.trim();
-  var err = document.getElementById('reg-err');
-
-  if (!fname || !lname) { err.textContent = 'Please enter your first and last name.'; err.style.display = 'block'; return; }
-  if (!phone) { err.textContent = 'Please enter your phone number.'; err.style.display = 'block'; return; }
-  if (!age) { err.textContent = 'Please select your age range.'; err.style.display = 'block'; return; }
-  err.style.display = 'none';
-
-  var mod = MODULES[selectedModule];
-  var moduleName = window._bundleSelected || mod.name;
-  var refCode = generateRefCode();
-  var now = new Date();
-  var dateStr = now.toLocaleDateString('en-GB') + ' ' + now.toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit'});
-
-  var data = {
-    action: 'register',
-    ref: refCode,
-    date: dateStr,
-    module: moduleName,
-    firstName: fname,
-    lastName: lname,
-    fullName: fname + ' ' + lname,
-    phone: phone,
-    email: email || 'Not provided',
-    age: age,
-    occupation: occ || 'Not specified',
-    source: source || 'Not specified',
-    comment: comment || '',
-    fee: mod.fee,
-    duration: mod.duration,
-    status: 'Pending Confirmation'
-  };
-
-  var btn = document.getElementById('reg-submit-btn');
-  document.getElementById('reg-btn-text').textContent = 'Submitting...';
-  btn.disabled = true;
-
-  // Use no-cors mode to avoid CORS blocking from GitHub Pages
-  // We show success immediately since no-cors returns opaque response
-  showSuccess(fname, mod.name, refCode);
-
-  // Send data in background using no-cors (fires and forgets)
-  fetch(REG_GAS_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'text/plain' },
-    body: JSON.stringify(data)
-  }).catch(function(err) {
-    console.log('Fetch error:', err);
-  });
-}
-
-function showSuccess(name, moduleName, refCode) {
-  var body = document.getElementById('reg-body');
-  body.innerHTML =
-    '<div class="reg-success">' +
-    '<div class="tick">&#10003;</div>' +
-    '<h4>Registration Received</h4>' +
-    '<p>Thank you, <strong>' + name + '</strong>. Your registration for <strong>' + moduleName + '</strong> has been received. Our admissions team will contact you via WhatsApp within 24 hours to confirm your place and arrange payment.</p>' +
-    '<div class="reg-code">' + refCode + '</div>' +
-    '<p style="font-size:12px;color:var(--muted)">Keep this reference number — mention it when you call or WhatsApp us.</p>' +
-    '<button onclick="closeReg()" style="margin-top:24px;background:var(--navy);color:white;border:none;padding:14px 32px;font-size:12px;font-weight:600;cursor:pointer;font-family:Inter,sans-serif;letter-spacing:2px;text-transform:uppercase">Close</button>' +
-    '</div>';
-}
-
-document.getElementById('reg-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeReg();
-});
-</script>
 
 </body>
 </html>
